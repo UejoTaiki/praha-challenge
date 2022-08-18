@@ -1,0 +1,45 @@
+@startuml tables
+
+entity order as "order\nオーダー" {
+  オーダーID [PK]
+  --
+  顧客ID
+  決済ステータス :bool
+  合計金額（税抜）
+  消費税
+}
+
+entity order_details as "order_details\n注文詳細" {
+  オーダーID [PK]
+  メニューID [PK]
+  サイズ種別 :int [PK]
+  --
+  ワサビ抜き個数 :int
+  皿数 :int
+  注文日時 :datetime
+}
+
+entity customer as "customer\n顧客" {
+  顧客ID [PK]
+  --
+  顧客名
+  電話番号
+}
+
+entity menu as "menu\nメニュー" {
+  メニューID [PK]
+  --
+  メニュー名
+  値段
+  メニュー種別ID
+}
+
+entity menu_types as "menu_types\nメニュー種別" {
+  メニュー種別ID [PK]
+  --
+  メニュー種別名
+}
+
+
+
+@enduml
