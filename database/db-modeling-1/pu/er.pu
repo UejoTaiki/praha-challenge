@@ -1,2 +1,9 @@
 @startuml erd
 !include tables.pu
+
+order -l- customer
+order_details }-l- order
+menu }-l-  order_details
+menu_types }-l-  menu
+
+@enduml

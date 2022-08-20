@@ -1,17 +1,21 @@
 @startuml tables
 
 entity order as "order\nオーダー" {
-  オーダーID [PK]
+  オーダーID :int [PK]
   --
-  顧客ID
+  顧客ID :int [FK]
+  合計皿数 :int
+  合計金額（税抜） :int
+  合計金額（税込み） :int
+  消費税 :int
   決済ステータス :bool
-  合計金額（税抜）
-  消費税
+  注文日時 :datetime
+  支払い日時 :datetime
 }
 
-entity order_details as "order_details\n注文詳細" {
-  オーダーID [PK]
-  メニューID [PK]
+entity order_details as "order_details\nオーダー詳細" {
+  オーダーID :int [PK]
+  メニューID :int [PK]
   サイズ種別 :int [PK]
   --
   ワサビ抜き個数 :int
@@ -20,24 +24,24 @@ entity order_details as "order_details\n注文詳細" {
 }
 
 entity customer as "customer\n顧客" {
-  顧客ID [PK]
+  顧客ID :int [PK]
   --
-  顧客名
-  電話番号
+  顧客名 :varchar
+  電話番号 :int
 }
 
 entity menu as "menu\nメニュー" {
-  メニューID [PK]
+  メニューID :int [PK]
   --
-  メニュー名
-  値段
-  メニュー種別ID
+  メニュー名 :varchar
+  値段 :int
+  メニュー種別ID :int
 }
 
 entity menu_types as "menu_types\nメニュー種別" {
-  メニュー種別ID [PK]
+  メニュー種別ID :int [PK]
   --
-  メニュー種別名
+  メニュー種別名 :varchar
 }
 
 
