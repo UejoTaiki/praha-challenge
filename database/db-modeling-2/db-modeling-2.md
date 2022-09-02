@@ -1,6 +1,6 @@
 ## 回答
 
-![](./db-modeling-2.png)
+![](./db-modeling-2.png) 
 
 ## 備考
 
