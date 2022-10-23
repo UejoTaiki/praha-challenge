@@ -2,7 +2,7 @@
 
 ## 課題1
 
-![](../../out/database/db-modeling-1/pu/er/erd.png)
+![](./out/database/db-modeling-1/pu/er/erd.png)
 
 <!-- ### オーダーテーブル -->
   <!-- 合計金額は税抜価格で。別で消費税のカラムを持っておく。
